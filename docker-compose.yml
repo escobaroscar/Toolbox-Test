@@ -1,0 +1,28 @@
+version: '3'
+services:
+    backendapp:
+      container_name: apiexpress
+      build: ./backend
+      ports:
+      - "4000:4000"
+      
+      environment:
+        - PORT=4000 
+        - WSTOOLBOX= https://echo-serv.tbxnet.com/v1/secret
+        - SECRET=Bearer aSuperSecretKey
+        - HOST=0.0.0.0
+      volumes:
+          - ./backend:/usr/src/app
+    frontendapp:
+      container_name: toolboxapp
+      build: ./frontend
+      ports:
+      - "3000:3000"
+      volumes:
+        - ./frontend:/app
+      environment:
+        - REACT_APP_API_URL=http://localhost:4000/api
+
+    
+
+
