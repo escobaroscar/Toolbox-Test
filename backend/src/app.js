@@ -15,5 +15,6 @@ app.use(express.json());
 
 //TODO: ******ROUTES***********
 app.use('/api/files/data', require('./routes/csv')),
+app.use('/api/files/list', require('./routes/fileList')),
 
 module.exports = app;

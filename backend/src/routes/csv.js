@@ -1,9 +1,12 @@
 const {Router} = require('express');
 const router = Router();
 
-const {getFiles} = require('../controllers/csvController');
+const {getFiles ,getFileOne} = require('../controllers/csvController');
 
 router.route('/')
-    .get(getFiles)
+    .get(getFiles),
 
+router.route('/:slug')
+    .get(getFileOne)
+    
 module.exports = router;
