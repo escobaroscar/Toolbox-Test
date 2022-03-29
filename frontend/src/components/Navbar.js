@@ -13,7 +13,7 @@ export default function Head({ search }) {
         }
     };
     return (
-        <Navbar bg="light" expand="lg">
+        <Navbar bg="dark" variant="dark" expand="lg">
             <Container>
                 <Navbar.Brand href="#home">React-Test-App</Navbar.Brand>
                 <Navbar.Collapse id="navbarScroll">
